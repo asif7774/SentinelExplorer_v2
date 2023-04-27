@@ -1,0 +1,77 @@
+@import '../../../assets/less/variables.less';
+
+.statswidget-card {
+  // border: 1px solid rgba(@primary-color, 0.6);
+  background: rgba(#ffffff, 0.06);
+  border-radius: 5px;
+  display: flex;
+  width: 100%;
+  padding: 12px 15px;
+  transition: all ease-in-out 0.1s;
+  &.link-tag {
+    cursor: pointer;
+    &:hover {
+      background: rgba(#ffffff, 0.1);
+    }
+  }
+
+  .statswidget-card-inner {
+    width: 100%;
+    .statswidget-title {
+      font-size: @font-size-sm;
+      margin-bottom: 10px;
+      font-weight: 300;
+      color: @white;
+      .icon {
+        width: 14px;
+        margin-left: 10px;
+        margin-bottom: -3px;
+        cursor: pointer;
+      }
+    }
+    .statswidget-number {
+      h3 {
+        color: @white;
+        font-size: 1.25rem;
+        margin-bottom: 5px;
+        word-break: break-all;
+      }
+    }
+    .statswidget-percents {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #00c98e;
+      font-size: @font-size-base - 1;
+      .icon {
+        fill: @white;
+        opacity: 0.4;
+      }
+      &.negative {
+        color: #fe2845;
+      }
+    }
+  }
+  &:hover {
+    // border-color: @primary-color;
+    .statswidget-percents {
+      .icon {
+        opacity: 1;
+        fill: @primary-color;
+      }
+    }
+  }
+}
+
+a.statswidget-card {
+  &:hover {
+    background: rgba(#ffffff, 0.1);
+    & .icon {
+      fill: @primary-color !important;
+      opacity: 1;
+    }
+  }
+}
+
+a.statswidget-card:hover {
+}

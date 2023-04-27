@@ -1,0 +1,36 @@
+@import "../../../assets/less/variables.less";
+
+.list-card{
+  width: 100%;
+  color: @white;
+  font-size: @font-size-base + 1;
+  display: block;
+  border-radius: 4px;
+  .list-card-inner{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 9px 10px;
+    .list-left{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      font-weight: 300;
+      font-family: @font-family-secondary;
+      .country-name{
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+.listing-main-wrapper{
+  .list-card{
+    &:nth-child(odd){
+      background: rgba(#6DB0F9, 0.12);
+    }
+    &:nth-child(even){
+      background: rgba(#181A1C, 0.18)
+    }
+  }
+}

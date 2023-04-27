@@ -1,0 +1,89 @@
+@import "../../../assets/less/variables.less";
+
+.statswidget-card-chart{
+    // border: 1px solid rgba(@primary-color, 0.6);
+    background: rgba(#ffffff, 0.06);
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+    padding: 12px 15px;
+    grid-column: span 2/span 2;
+    color: @white;
+    &.link-tag{
+        cursor: pointer;
+        &:hover{
+            background: rgba(#ffffff, 0.1); 
+        }
+    }
+    &:hover{
+        color: @white;
+    }
+    .statswidget-card-inner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .left-statswidget{
+            width: 50%;
+            .statswidget-title{
+                font-size: @font-size-sm;
+                margin-bottom: 10px;
+                font-weight: 300;
+                .icon{
+                    width: 14px;
+                    margin-left: 10px;
+                    margin-bottom: -3px;
+                }
+            }
+            .statswidget-number{
+                h3{
+                    color: @white;
+                    font-size: 1.25rem;
+                    margin-bottom: 5px;
+                }
+            }
+            .statswidget-percents{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: #00C98E;
+                font-size: @font-size-base - 1;
+                .icon{
+                    fill: @white;
+                    opacity: 0.4;
+                }
+            }
+        }
+        .right-chart{
+            width: 50%;
+            height: 90px;
+            .bottom-label{
+                font-size: 10px;
+                text-align: right;
+                font-weight: 300;
+            }
+        }
+    }
+    &:hover{
+        border-color: @primary-color;
+        .statswidget-percents{
+            .icon{
+                opacity: 1;
+                fill: @primary-color;
+            }
+        }
+    }
+}
+
+a.statswidget-card-chart{
+    &:hover{
+        background: rgba(#ffffff, 0.1); 
+    }
+}
+
+.chart-tooltips{
+    background: @white;
+    border-radius: 2px;
+    padding: 2px 8px;
+    color: @black;
+    font-size: 14px;
+}

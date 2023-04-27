@@ -1,0 +1,91 @@
+@import '../../../assets/less/variables.less';
+
+.detail-box-wrapper {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  position: fixed;
+  left: 60px;
+  top: 120px;
+  z-index: 10;
+  max-width: 400px;
+  width: 100%;
+  border-top: 4px solid @primary-color;
+  border-radius: 0 0 15px 15px;
+  @media screen and (max-width: 767px) {
+    position: inherit;
+    width: 100vw;
+    max-width: 100%;
+    height: calc(100vh - 203px);
+  }
+  .detail-box-inner {
+    .detailbox-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .title-wrapper {
+        display: flex;
+        align-items: center;
+        .back-btn {
+          svg {
+            fill: #00b6fa;
+            margin-right: 9px;
+          }
+        }
+      }
+      .title-icon {
+        font-size: @font-size-lg + 4;
+        cursor: pointer;
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+    }
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .subtitle {
+      display: flex;
+      align-items: center;
+      padding-bottom: 15px;
+      font-size: @font-size-base - 1;
+      text-transform: uppercase;
+      font-weight: 300;
+      .icon {
+        fill: @primary-color;
+        margin-right: 10px;
+      }
+    }
+    .detailbox-content {
+      max-height: auto;
+      transition: max-height 0.25s ease-in;
+      margin-top: 15px;
+      &.hide {
+        max-height: 0;
+        transition: max-height 0.15s ease-out;
+        overflow: hidden;
+      }
+      .detailbox-content-inner {
+        display: grid;
+        grid-gap: 15px;
+        max-height: calc(100vh - 250px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        @media screen and (max-width: 767px) {
+          height: calc(100vh - 318px);
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+  &.without-chart {
+    .detailbox-content-inner {
+      grid-template-columns: auto auto;
+    }
+  }
+}

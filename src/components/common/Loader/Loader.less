@@ -1,0 +1,32 @@
+
+section.preload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.9);
+  .loader{
+    max-width: 200px;
+    width: 100%;
+  }
+  svg {max-width:200px;height:auto;margin:0 auto;display:block;}
+}
+section.preload svg {max-width:200px;height:auto;margin:0 auto;display:block;}
+section.preload svg #p1 {stroke-width:1;stroke-dasharray:311px;stroke-dashoffset:311px;}
+
+section.preload svg #p1{fill:transparent;stroke:#00b6fa;stroke-width:1;-webkit-animation-name:draw;-moz-animation-name:draw;-o-animation-name:draw;animation-name:draw;-webkit-animation-duration:2s;-moz-animation-duration:2s;-o-animation-duration:2s;animation-duration:2s;-webkit-animation-fill-mode:forwards;-moz-animation-fill-mode:forwards;-o-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite;-o-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-timing-function:linear;-o-animation-timing-function:linear;animation-timing-function:linear;}
+@-webkit-keyframes draw {95% {stroke-dashoffset:0;fill:transparent;stroke:#00b6fa;}
+100% {fill:#00b6fa;stroke:transparent;}
+}
+@-moz-keyframes draw {95% {stroke-dashoffset:0;fill:transparent;stroke:#00b6fa;}
+100% {fill:#00b6fa;stroke:transparent;}
+}
+@-o-keyframes draw {95% {stroke-dashoffset:0;fill:transparent;stroke:#000;}
+100% {fill:#00b6fa;stroke:transparent;}
+}
+@keyframes draw {95% {stroke-dashoffset:0;fill:transparent;stroke:#00b6fa;}
+100% {fill:#00b6fa;stroke:transparent;}
+}

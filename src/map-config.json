@@ -1,0 +1,10 @@
+{
+  "token": "pk.eyJ1IjoiYXNpZjc3NzQiLCJhIjoiY2t6MDBsemx3MGpmMjJ2bzE2aG54czI0byJ9.nae0UyMtDHUldZgbkLFnYQ",
+  "styles": {
+    "custom": "mapbox://styles/asif7774/cl0ekorls001214o2pk8vu229",
+    "light": "mapbox://styles/mapbox/light-v9",
+    "dark": "mapbox://styles/mapbox/dark-v9",
+    "basic": "mapbox://styles/mapbox/basic-v9",
+    "outdoor": "mapbox://styles/mapbox/outdoors-v10"
+  }
+}
