@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Router, Switch, Route} from 'react-router-dom';
 import Map from './components/views/Map';
 import Landing from './components/views/Landing';
@@ -7,7 +7,7 @@ import Header from './components/layout/Header/Header';
 import SvgSprite from './utility/SvgSpriteLoader';
 import './App.less';
 import history from './common/history';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {
   setHandshakedisableMetadata,
   setHandshakeEnableMetadata,
@@ -64,14 +64,14 @@ class AppWrapper extends React.Component {
 const App = () => {
   const maprReload = useSelector((state) => state.reload);
   const [messageApi, contextHolder] = message.useMessage();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const success = () => {
-    messageApi.open({
-      type: 'success',
-      content: 'This is a success message',
-    });
-  };
+  // const success = () => {
+  //   messageApi.open({
+  //     type: 'success',
+  //     content: 'This is a success message',
+  //   });
+  // };
   // useEffect(() => {
   //   let handshakeCheckbox = document.getElementById('handshake-change');
 

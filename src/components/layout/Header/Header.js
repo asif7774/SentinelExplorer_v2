@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AutoComplete, Checkbox, Switch, Tooltip} from 'antd';
+import {AutoComplete, Switch, Dropdown, Space} from 'antd';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {
@@ -12,20 +12,11 @@ import {
   setWireguardData,
   setActiveNode,
 } from '../../../store/actions/mapActions';
-import {Link, NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {SvgIcon} from '../../common';
 import './Header.less';
-import {Button, Dropdown, Space} from 'antd';
 import {CaretDownOutlined} from '@ant-design/icons';
 
-const options = [
-  {value: 'Burns Bay Road'},
-  {value: 'Downing Street'},
-  {value: 'Wall Street'},
-  {value: 'Wall Street'},
-  {value: 'Wall Street'},
-  {value: 'Wall Street'},
-];
 
 // const Horncontent = () => {
 //   return <div></div>;
@@ -51,9 +42,9 @@ class Header extends Component {
   }
 
   currentThemeFn() {
-    let isLocalStorage =
-        'localStorage' in window && window['localStorage'] !== null,
-      currentTheme;
+    // let isLocalStorage =
+    //     'localStorage' in window && window['localStorage'] !== null,
+    //   currentTheme;
     let htmlBody = document.getElementsByTagName('body')[0];
     htmlBody.classList.add('dark');
     // if (isLocalStorage && localStorage.getItem('currentTheme')) {

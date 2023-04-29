@@ -25,7 +25,7 @@ const DvpnnodesCities = () => {
       if (storeState.isDataInitialized) {
         mainData = storeState.metadata;
         if (country) {
-          console.log(country);
+          // console.log(country);
           mainData = storeState.metadata.filter((el) => {
             return el.location.country === country;
           });
@@ -51,7 +51,7 @@ const DvpnnodesCities = () => {
       <div className="listing-main-wrapper">
         {data.map((city, i) => {
           return (
-            <ListView key={city} countryname={city} url={`/cities/${city}`} />
+            <ListView key={city+i} countryflagname={country} cityname={city} url={`/cities/${city}`} />
           );
         })}
       </div>

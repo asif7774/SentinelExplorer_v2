@@ -15,9 +15,9 @@ import ValidatorsList from './components/views/ValidatorsList';
 import ValidatorsDetails from './components/views/ValidatorsDetails';
 import UtilitiesDapp from './components/views/Utilitiesdapp';
 import Continents from './components/views/Continents';
-import ContinentsNodes from './components/views/ContinentsNodes';
+// import ContinentsNodes from './components/views/ContinentsNodes';
 import HNSResolversNodes from './components/views/HNSResolverNodes';
-import CountryNodes from './components/views/CountryNodes';
+// import CountryNodes from './components/views/CountryNodes';
 import DvpnnodesCities from './components/views/DvpnNodesCities';
 
 const routes = [

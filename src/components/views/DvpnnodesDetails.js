@@ -3,12 +3,10 @@ import DetailsBox from '../common/DetailsBox/DetailsBox';
 import StatsWidget from '../common/StatsWidget/StatsWidget';
 import ReactCountryFlag from 'react-country-flag';
 import './CommonView.less';
-import {SvgIcon} from '../common';
 import {useSelector, useDispatch} from 'react-redux';
 import {useParams} from 'react-router-dom';
 import {
   resetMapZoom,
-  resetStation,
   setActiveNode,
 } from '../../store/actions/mapActions';
 import countryCode from '../../utility/countryCode';
@@ -40,8 +38,6 @@ const formatBytes = (bytes, decimals = 0) => {
   } else {
     return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
   }
-
-  return;
 };
 
 const DvpnnodesDetails = () => {

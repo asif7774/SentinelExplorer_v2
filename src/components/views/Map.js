@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactMapboxGl, {
-  Popup,
   ZoomControl,
   MapContext,
   Feature,
-  Layer,
-  FullscreenControl,
+  Layer
 } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import {

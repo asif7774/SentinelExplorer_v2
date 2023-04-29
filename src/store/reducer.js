@@ -143,7 +143,7 @@ function rootReducer(state = defaultState, action) {
       };
     case 'SET_V2RAY_DATA':
       const v2RayFilteredData = state.data.filter((el) => {
-        return el.type == 2;
+        return el.type === 2;
       });
 
       return {
@@ -159,7 +159,7 @@ function rootReducer(state = defaultState, action) {
       };
     case 'SET_WIREGUARD_DATA':
       const wireguardFilteredData = state.data.filter((el) => {
-        return el.type != 2;
+        return el.type !== 2;
       });
 
       return {

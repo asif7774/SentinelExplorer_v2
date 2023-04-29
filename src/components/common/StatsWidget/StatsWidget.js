@@ -148,7 +148,7 @@ const StatsWidget = ({
                       navigator.clipboard.writeText(statsnumbers);
                     }}
                   >
-                    <CopyOutlined className="icon" viewbox="0 0 13.75 13.75" />
+                    <CopyOutlined className="icon" viewBox="0 0 13.75 13.75" />
                   </button>
                 </Tooltip>
               )}

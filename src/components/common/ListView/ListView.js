@@ -31,6 +31,7 @@ const ListView = ({
   speed,
   counts,
   countryname,
+  cityname,
   nodename,
   countryflagname,
   clickHandler,
@@ -41,6 +42,16 @@ const ListView = ({
     <Link to={url} className="list-card" onClick={clickHandler}>
       <div className="list-card-inner">
         <div className="list-left">
+          {countryflagname && 
+            <ReactCountryFlag
+            svg
+            countryCode={countryCode[countryflagname]}
+            style={{
+              width: '2em',
+              height: '2em',
+            }}
+          />
+          }
           <ReactCountryFlag
             svg
             countryCode={countryCode[countryname]}
@@ -52,9 +63,7 @@ const ListView = ({
           <div className="country-name">
             {continent && continent}
             {!continent &&
-              `${moniker ? moniker + ',' : ''} ${
-                nodename ? nodename + ',' : ''
-              } ${countryname ? countryname : ''}`}
+              `${moniker ? moniker + ',' : ''} ${ nodename ? nodename + ',' : ''} ${countryname ? countryname : ''} ${cityname ? cityname : ''} `}
           </div>
         </div>
         <div className="list-right">
