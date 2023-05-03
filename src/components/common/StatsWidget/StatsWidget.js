@@ -16,6 +16,7 @@ const StatsWidget = ({
   loading,
   addPercentSign,
   copyIcon,
+  extraText,
 }) => {
   return (
     <>
@@ -67,6 +68,7 @@ const StatsWidget = ({
                 <SvgIcon name="arrow-right" viewbox="0 0 12 8" />
               </div>
             </div>
+            {extraText && <span className="powered-by">{extraText}</span>}
           </div>
         </Link>
       ) : extenalurl ? (
@@ -121,10 +123,11 @@ const StatsWidget = ({
                 <SvgIcon
                   name="arrow-right"
                   viewbox="0 0 12 8"
-                  fill={'rgba(255,255,255, .4)'}
+                  fill={'rgba(255,255,255, 1)'}
                 />
               </div>
             </div>
+            {extraText && <span className="powered-by">{extraText}</span>}
           </div>
         </a>
       ) : (
@@ -169,6 +172,7 @@ const StatsWidget = ({
                 {addPercentSign ? '%' : ''}
               </div>
             </div>
+            {extraText && <span className="powered-by">{extraText}</span>}
           </div>
         </div>
       )}

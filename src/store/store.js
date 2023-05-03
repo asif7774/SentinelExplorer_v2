@@ -24,7 +24,7 @@ export const getInitalData = () => async (dispatch) => {
       }
     }
     // You're dispatching not only the metadata, but also setting isDataInitialized to true, to denote, that data has been loaded
-    dispatch({type: 'DATA_INITIALIZED', metadata, });
+    dispatch({type: 'DATA_INITIALIZED', metadata});
   } catch (error) {
     console.log(error);
   }
@@ -33,25 +33,13 @@ export const getInitalData = () => async (dispatch) => {
 export const coinGeckoDataInt = () => async (dispatch) => {
   try {
     let coinGeckoData = await axios
-    .get("https://api.mintscan.io/v2/utils/market/price/udvpn")
-    .then((res) => {
-      return res.data;
-    });
+      .get(
+        'https://api.coingecko.com/api/v3/simple/price?ids=sentinel&vs_currencies=usd&include_24hr_change=true'
+      )
+      .then((res) => {
+        return res.data.sentinel;
+      });
     dispatch({type: 'CG_DATA_INITIALIZED', coinGeckoData});
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-export const validatorsDataInt = () => async (dispatch) => {
-  try {
-    let validatorsData = await axios
-    .get("https://api.mintscan.io/v1/sentinel/status")
-    .then((res) => {
-      return res.data;
-    });
-    dispatch({type: 'VALIDATORS_DATA_INITIALIZED', validatorsData, isDataInitialized: true});
-
   } catch (error) {
     console.log(error);
   }

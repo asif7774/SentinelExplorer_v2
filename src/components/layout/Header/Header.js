@@ -203,7 +203,8 @@ class Header extends Component {
                   {
                     key: '1',
                     label: (
-                      <button
+                      <div
+                        tabIndex="-1"
                         className="options"
                         onClick={() => {
                           this.applyNodesFilte('allNodes');
@@ -214,13 +215,14 @@ class Header extends Component {
                           checked={this.props.filteredDataAs === 'allNodes'}
                           size="small"
                         />
-                      </button>
+                      </div>
                     ),
                   },
                   {
                     key: '2',
                     label: (
-                      <button
+                      <div 
+                        tabIndex="-1"
                         className="options"
                         onClick={() => {
                           this.applyNodesFilte('v2ray');
@@ -231,13 +233,14 @@ class Header extends Component {
                           checked={this.props.filteredDataAs === 'v2ray'}
                           size="small"
                         />
-                      </button>
+                      </div>
                     ),
                   },
                   {
                     key: '3',
                     label: (
-                      <button
+                      <div 
+                        tabIndex="-1"
                         className="options"
                         onClick={() => {
                           this.applyNodesFilte('wireguard');
@@ -248,13 +251,14 @@ class Header extends Component {
                           checked={this.props.filteredDataAs === 'wireguard'}
                           size="small"
                         />
-                      </button>
+                      </div>
                     ),
                   },
                   {
                     key: '4',
                     label: (
-                      <button
+                      <div 
+                        tabIndex="-1"
                         className="options"
                         onClick={() => {
                           this.applyNodesFilte('hns');
@@ -265,7 +269,7 @@ class Header extends Component {
                           checked={this.props.filteredDataAs === 'hns'}
                           size="small"
                         />
-                      </button>
+                      </div>
                     ),
                   },
                 ],

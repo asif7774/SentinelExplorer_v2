@@ -65,8 +65,9 @@ const Landing = () => {
         setTotalNode(data.length);
         let countriesCount = new Set(data.map((o) => o.location.country));
         if (initData.coinGeckoData !== []) {
-          if (initData.coinGeckoData.current_price !== undefined) {
-            let current_price_cg = initData.coinGeckoData.current_price;
+          if (initData.coinGeckoData.usd !== undefined) {
+            console.log(initData);
+            let current_price_cg = initData.coinGeckoData.usd;
             let formatted_current_price = current_price_cg.toFixed(5);
             setCurrentPrice(formatted_current_price);
           }
@@ -111,22 +112,21 @@ const Landing = () => {
             // extenalurl={"https://www.mintscan.io/sentinel"}
           /> */}
           <StatsWidget
-            title="Market Price"
+            title={`Market Price`}
             statsnumbers={`$ ${currentPrice}`}
-            statspercents={
-              initData.coinGeckoData.daily_price_change_in_percent !== undefined
-                ? initData.coinGeckoData.daily_price_change_in_percent.toFixed(
-                    2
-                  )
+            statspercents={`${
+              initData.coinGeckoData?.usd_24h_change !== undefined
+                ? initData.coinGeckoData?.usd_24h_change.toFixed(2)
                 : 'NA'
-            }
+            }`}
             tooltip="dVPN Price Data Provided by CoinGecko."
             extenalurl={'https://www.coingecko.com/en/coins/sentinel'}
             addPercentSign={true}
-          />{' '}
+            extraText="Powered by CoinGecko"
+          />
           <StatsWidget
             title="HNS Resolvers"
-            statsnumbers={totalHNSResolver}
+            statsnumbers={String(totalHNSResolver)}
             // statspercents="4.24"
             tooltip="Number of Handshake Network Resolvers on the Sentinel Network."
             url="/HNSResolvers"

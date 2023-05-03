@@ -3,14 +3,10 @@ import ReactMapboxGl, {
   ZoomControl,
   MapContext,
   Feature,
-  Layer
+  Layer,
 } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import {
-  getInitalData,
-  coinGeckoDataInt,
-  validatorsDataInt,
-} from '../../store/store';
+import {getInitalData, coinGeckoDataInt} from '../../store/store';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {
@@ -87,13 +83,7 @@ class Map extends React.Component {
           },
         }));
       });
-      this.props.coinGeckoDataInt().then(() => {
-        this.props.validatorsDataInt().then(() => {
-          this.setState({
-            loadingSt: false,
-          });
-        });
-      });
+      this.props.coinGeckoDataInt().then(() => {});
     }, 2500);
   }
 
@@ -169,9 +159,16 @@ class Map extends React.Component {
         </>
       );
     };
+    console.log(
+      this.props.isDataInitialized,
+      this.props.reload,
+      this.props,
+
+      'this.props.isDataInitialized || this.props.reload'
+    );
     return (
       <>
-        {!this.props.isDataInitialized && <Loader />}
+        {/* {!this.props.isDataInitialized && <Loader />} */}
 
         <Mapbox
           con
@@ -241,10 +238,11 @@ class Map extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     getInitalData: state.getInitalData,
     coinGeckoDataInt: state.coinGeckoDataInt,
-    validatorsDataInt: state.validatorsDataInt,
+
     isDataInitialized: state.isDataInitialized,
     mapCenter: state.mapCenter,
     mapZoom: state.mapZoom,
@@ -262,7 +260,6 @@ export default connect(mapStateToProps, {
   resetStation,
   getInitalData,
   coinGeckoDataInt,
-  validatorsDataInt,
   setReload,
   setTheme,
   setHandshakedisableMetadata,

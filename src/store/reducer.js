@@ -21,7 +21,6 @@ const defaultState = {
   mapZoom: [2.5],
   station: undefined,
   coinGeckoData: [],
-  validatorsData: [],
   currentTheme: undefined,
 };
 
@@ -71,12 +70,7 @@ function rootReducer(state = defaultState, action) {
         ...state,
         coinGeckoData: action.coinGeckoData,
       };
-    case 'VALIDATORS_DATA_INITIALIZED':
-      return {
-        ...state,
-        isDataInitialized: true,
-        validatorsData: action.validatorsData,
-      };
+
     case 'SET_ACTIVE_STATION':
       return {
         ...state,
@@ -109,7 +103,7 @@ function rootReducer(state = defaultState, action) {
         metadata: enableMetadata,
         filteredDataAs: 'hns',
         selectedNode: null,
-        isDataInitialized: false,
+        isDataInitialized: true,
         mapCenter: [-97.9222112121185, 39.3812661305678],
         mapZoom: [2.5],
         reload: false,
@@ -124,7 +118,7 @@ function rootReducer(state = defaultState, action) {
         station: undefined,
         metadata: disableMetadata,
         selectedNode: null,
-        isDataInitialized: false,
+        isDataInitialized: true,
         mapCenter: [-97.9222112121185, 39.3812661305678],
         mapZoom: [2.5],
         reload: false,
@@ -136,7 +130,7 @@ function rootReducer(state = defaultState, action) {
         metadata: state.data,
         selectedNode: null,
         filteredDataAs: 'allNodes',
-        isDataInitialized: false,
+        isDataInitialized: true,
         mapCenter: [-97.9222112121185, 39.3812661305678],
         mapZoom: [2.5],
         reload: false,
@@ -152,7 +146,7 @@ function rootReducer(state = defaultState, action) {
         metadata: v2RayFilteredData,
         selectedNode: null,
         filteredDataAs: 'v2ray',
-        isDataInitialized: false,
+        isDataInitialized: true,
         mapCenter: [-97.9222112121185, 39.3812661305678],
         mapZoom: [2.5],
         reload: false,
@@ -168,15 +162,17 @@ function rootReducer(state = defaultState, action) {
         metadata: wireguardFilteredData,
         selectedNode: null,
         filteredDataAs: 'wireguard',
-        isDataInitialized: false,
+        isDataInitialized: true,
         mapCenter: [-97.9222112121185, 39.3812661305678],
         mapZoom: [2.5],
         reload: false,
       };
     case 'SET_RELOAD':
+      console.log('SET_RELOAD', action.payload);
       return {
         ...state,
         reload: action.payload,
+        isDataInitialized: false,
         station: undefined,
         selectedNode: null,
       };
