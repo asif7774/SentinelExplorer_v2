@@ -30,7 +30,8 @@ const Mapbox = ReactMapboxGl({
   accessToken: token,
   renderWorldCopies: false,
   interactive: true,
-  touchZoomRotate: true,
+  touchZoomRotate: false,
+  doubleClickZoom:false
 });
 
 // const US_BOUNDS = [
