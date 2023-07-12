@@ -124,13 +124,18 @@ class Map extends React.Component {
     }
   }
 
-  markerClick = (station, {feature}) => {
+  markerClick = (station, { feature }) => {
+    console.log(station, "stationstation");
     this.setState({
       station,
     });
     this.props.setStation(station);
     this.props.setActiveNode(station);
-    this.props.history.push(`/dvpnnodes-details/${station.address}`);
+    if (station.location.city) {
+      this.props.history.push(`/cities/${station.location.city}`);
+    } else {
+      this.props.history.push(`/dvpnnodes-details/${station.address}`);
+    }
   };
 
   onStyleLoad = (map) => {

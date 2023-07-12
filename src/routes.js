@@ -19,6 +19,7 @@ import Continents from './components/views/Continents';
 import HNSResolversNodes from './components/views/HNSResolverNodes';
 // import CountryNodes from './components/views/CountryNodes';
 import DvpnnodesCities from './components/views/DvpnNodesCities';
+import AllNodesDataDetails from './components/views/AllNodesDataDetails';
 
 const routes = [
   {
@@ -112,6 +113,10 @@ const routes = [
   {
     path: '/uilitiesdapp',
     component: UtilitiesDapp,
+  },
+  {
+    path: '/AllNodesDataDetails',
+    component: AllNodesDataDetails,
   },
 ];
 
