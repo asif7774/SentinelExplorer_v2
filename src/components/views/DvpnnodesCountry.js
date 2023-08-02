@@ -15,7 +15,7 @@ const getContries = (array) => {
 };
 
 const DvpnnodesCountry = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading] = useState(true);
   const [data, setData] = useState([]);
   const storeState = useSelector((state) => state);
   const {continent} = useParams();
@@ -25,7 +25,6 @@ const DvpnnodesCountry = () => {
       if (storeState.isDataInitialized) {
         mainData = storeState.metadata;
         if (continent) {
-          console.log(continent);
           mainData = storeState.metadata.filter((el) => {
             return el.location.continent === continent;
           });
@@ -45,7 +44,7 @@ const DvpnnodesCountry = () => {
       }
     };
     initFn();
-  }, [storeState, loading]);
+  }, [storeState, loading, continent]);
   return (
     <DetailsBox subtitle="Countries" subtitleClick={true}>
       <div className="listing-main-wrapper">

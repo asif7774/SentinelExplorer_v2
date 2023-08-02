@@ -13,7 +13,6 @@ import {
   setHandshakeEnableMetadata,
   setReload,
 } from './store/actions/mapActions';
-import {message} from 'antd';
 
 //Svg Sprite
 import svgFile from './assets/images/svg/svg-sprite.svg';
@@ -33,10 +32,6 @@ function RouteWithSubRoutes(route) {
   );
 }
 class AppWrapper extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   render() {
     return (
       <React.Fragment>
@@ -63,48 +58,10 @@ class AppWrapper extends React.Component {
 
 const App = () => {
   const maprReload = useSelector((state) => state.reload);
-  const [messageApi, contextHolder] = message.useMessage();
-  // const dispatch = useDispatch();
-
-  // const success = () => {
-  //   messageApi.open({
-  //     type: 'success',
-  //     content: 'This is a success message',
-  //   });
-  // };
-  // useEffect(() => {
-  //   let handshakeCheckbox = document.getElementById('handshake-change');
-
-  //   handshakeCheckbox.addEventListener('change', async (e) => {
-  //     dispatch(setReload(true));
-
-  //     if (e.target.checked) {
-  //       dispatch(setHandshakeEnableMetadata());
-  // messageApi.open({
-  //   type: 'success',
-  //   content: 'Switched to v2ray nodes',
-  // });
-  // } else if (!e.target.checked) {
-  //   dispatch(setHandshakedisableMetadata());
-  // messageApi.open({
-  //   type: 'success',
-  //   content: 'Switched to wireguard nodes',
-  // });
-  //     }
-  //   });
-  //   return handshakeCheckbox.removeEventListener('change', async (e) => {
-  //     dispatch(setReload(true));
-  //     if (e.target.checked) {
-  //       dispatch(setHandshakeEnableMetadata());
-  //     } else {
-  //       dispatch(setHandshakedisableMetadata());
-  //     }
-  //   });
-  // }, []);
+  
 
   return (
     <>
-      {contextHolder}
       <AppWrapper
         reload={maprReload}
         setHandshakeEnableMetadata={setHandshakeEnableMetadata}

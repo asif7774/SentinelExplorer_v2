@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactMapboxGl, {
   ZoomControl,
-  MapContext,
   Feature,
   Layer,
 } from 'react-mapbox-gl';
@@ -18,9 +17,8 @@ import {
   setHandshakedisableMetadata,
   setHandshakeEnableMetadata,
 } from '../../store/actions/mapActions';
-import Loader from '../common/Loader/Loader';
+// import Loader from '../common/Loader/Loader';
 import './CommonView.less';
-import PinIcon from '../../svg/pin-icon';
 import {svg} from '../../svg/dot-icon';
 const {token, styles} = require('../../map-config.json');
 
@@ -33,16 +31,6 @@ const Mapbox = ReactMapboxGl({
   touchZoomRotate: false,
   doubleClickZoom:false
 });
-
-// const US_BOUNDS = [
-//   [-61.08, 44.84],
-//   [-125, 33],
-// ]
-
-// const US_EU_BOUNDS = [
-//   [32.1, 58.63],
-//   [-125, 33],
-// ]
 
 const mapStyle = {
   height: '100vh',
@@ -125,7 +113,6 @@ class Map extends React.Component {
   }
 
   markerClick = (station, { feature }) => {
-    console.log(station, "stationstation");
     this.setState({
       station,
     });
@@ -165,13 +152,6 @@ class Map extends React.Component {
         </>
       );
     };
-    console.log(
-      this.props.isDataInitialized,
-      this.props.reload,
-      this.props,
-
-      'this.props.isDataInitialized || this.props.reload'
-    );
     return (
       <>
         {/* {!this.props.isDataInitialized && <Loader />} */}
@@ -180,9 +160,6 @@ class Map extends React.Component {
           con
           ref={this.mapRef}
           style={styles.custom}
-          // style={
-          //   this.props.currentTheme === 'light' ? styles.outdoor : styles.custom
-          // }
           onStyleLoad={this.onStyleLoad(this)}
           fitBounds={fitBounds}
           // maxBounds={US_BOUNDS}
@@ -193,50 +170,8 @@ class Map extends React.Component {
           flyToOptions={flyToOptions}
           renderChildrenInPortal={true}
         >
-          <MapContext.Consumer>
-            {(map) => {
-              // console.log(map);
-              // use `map` here
-            }}
-          </MapContext.Consumer>
-
           {this.props.isDataInitialized && loadLayer()}
-          {/* {this.props.station && (
-            <Popup
-              key={this.props.station.id}
-              coordinates={this.props.station.position}
-              className="pinPoint-tooltip"
-              style={{
-                marginTop: '-11px',
-              }}
-            >
-              <div>
-                <div>
-                  <b>{this.props.station.moniker}</b>,<br />
-                  {this.props.station.location.city},{' '}
-                  {this.props.station.location.country}
-                </div>
-                <div>
-                 
-                  Download Speed :{' '}
-                  {this.formatBytes(this.props.station.bandwidth.download)}
-                </div>
-
-                <div>
-                
-                  Upload Speed :{' '}
-                  {this.formatBytes(this.props.station.bandwidth.upload)}
-                </div>
-                <div>
-                 
-                  Protocol Type :{' '}
-                  {this.props.station.type === 2 ? 'V2Ray' : 'WireGuard'}
-                </div>
-              </div>
-            </Popup>
-          )} */}
           <ZoomControl position={'bottom-right'} />
-          {/* <FullscreenControl /> */}
         </Mapbox>
       </>
     );
@@ -244,7 +179,6 @@ class Map extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     getInitalData: state.getInitalData,
     coinGeckoDataInt: state.coinGeckoDataInt,

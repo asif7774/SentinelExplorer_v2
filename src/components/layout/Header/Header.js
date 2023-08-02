@@ -17,21 +17,6 @@ import {SvgIcon} from '../../common';
 import './Header.less';
 import {CaretDownOutlined} from '@ant-design/icons';
 
-
-// const Horncontent = () => {
-//   return <div></div>;
-// };
-
-// const FeedbackHorn = () => {
-//   return (
-//     <div className="bullhorn-header">
-//       <Popover content={Horncontent} trigger="click">
-//         <SvgIcon name="horn" viewbox="0 0 19.826 19.448" />
-//       </Popover>
-//     </div>
-//   );
-// };
-
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -42,36 +27,8 @@ class Header extends Component {
   }
 
   currentThemeFn() {
-    // let isLocalStorage =
-    //     'localStorage' in window && window['localStorage'] !== null,
-    //   currentTheme;
     let htmlBody = document.getElementsByTagName('body')[0];
     htmlBody.classList.add('dark');
-    // if (isLocalStorage && localStorage.getItem('currentTheme')) {
-    //   currentTheme = localStorage.getItem('currentTheme');
-    //   if (currentTheme === 'light') {
-    //     this.setState({
-    //       currentThemeState: false,
-    //     });
-    //     htmlBody.classList.add('light');
-    //     htmlBody.classList.remove('dark');
-    //     this.props.setTheme('light');
-    //   } else {
-    //     this.setState({
-    //       currentThemeState: true,
-    //     });
-    //     htmlBody.classList.remove('light');
-    //     htmlBody.classList.add('dark');
-    //     this.props.setTheme('dark');
-    //   }
-    // } else {
-    //   localStorage.setItem('currentTheme', 'light');
-    //   this.props.setTheme('light');
-    //   this.setState({
-    //     currentThemeState: false,
-    //   });
-    //   htmlBody.classList.add('light');
-    // }
   }
 
   componentDidMount() {
@@ -182,19 +139,8 @@ class Header extends Component {
                 >
                   Github
                 </a>
-
-                {/* <NavLink to="/governance" className="menu-item">
-                  Governance
-                </NavLink>
-                <NavLink to="/market" className="menu-item">
-                  Market
-                </NavLink>
-                <NavLink to="/utilities" className="menu-item">
-                  Utilities
-                </NavLink> */}
               </div>
             </nav>
-            {/* <FeedbackHorn /> */}
             <Dropdown
               // open
               className="header-dropdown"
@@ -277,41 +223,13 @@ class Header extends Component {
               placement="bottom"
               overlayClassName="header-menu-box"
             >
-              <a onClick={(e) => e.preventDefault()}>
+              <div>
                 <Space>
                   Node View
                   <CaretDownOutlined />
                 </Space>
-              </a>
+              </div>
             </Dropdown>
-            {/* <Checkbox id="handshake-change" /> */}
-            {/* {this.props.isDataInitialized && (
-              <Tooltip
-                title={`Switch to ${
-                  this.props.currentTheme !== 'light' ? 'light' : 'dark'
-                } mode.`}
-              >
-                <Switch
-                  className="theme_switch"
-                  defaultChecked={this.state.currentThemeState}
-                  onChange={this.handleThemeToggle}
-                  checkedChildren={
-                    <SvgIcon
-                      className="light"
-                      name="light_mode"
-                      viewbox="0 0 4000 4000"
-                    />
-                  }
-                  unCheckedChildren={
-                    <SvgIcon
-                      className="dark"
-                      name="dark_mode"
-                      viewbox="0 0 4000 4000"
-                    />
-                  }
-                />
-              </Tooltip>
-            )} */}
             <div className="header-search">
               <SvgIcon
                 className="search-icon"

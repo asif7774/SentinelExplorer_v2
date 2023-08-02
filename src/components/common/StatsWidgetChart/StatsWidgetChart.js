@@ -93,6 +93,7 @@ const StatsWidget = ({
                 timestamp: el.timestamp,
               };
             }
+            return null
           });
           let newe = modifiedData.reverse();
 

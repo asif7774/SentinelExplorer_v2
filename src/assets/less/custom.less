@@ -645,51 +645,13 @@ iframe{
   display: none;
 }
 
-
-
-/* pulse in SVG */
-svg.pulse-svg {
-  overflow: visible;
-}
-svg.pulse-svg .second-circle, svg.pulse-svg .third-circle {
-  fill: #12f725;
-  transform: scale(0.5);
-  transform-origin: center center;
-  animation: pulse-me 3s linear infinite;
-}
-svg.pulse-svg .second-circle {
-  animation-delay: 1s;
-}
-svg.pulse-svg .third-circle {
-  animation-delay: 2s;
-}
-svg.pulse-svg .fourth-circle{
-  transform-origin: center center;
-  animation: pulse 5s ease infinite;
-  opacity:1;
-}
-
-/* pulse in CSS */
-
-
-@keyframes pulse-me {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  70% {
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(3);
-    opacity: 0;
-  }
-}
-@-webkit-keyframes pulse {
-	0% { opacity: 1; } 
-	50% { opacity: .1; } 
-	100% { opacity: 1; }
+.AllNodeDataDetails{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #fff;
+  color: #000;
 }

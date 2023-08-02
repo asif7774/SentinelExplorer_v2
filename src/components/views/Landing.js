@@ -66,7 +66,6 @@ const Landing = () => {
         let countriesCount = new Set(data.map((o) => o.location.country));
         if (initData.coinGeckoData !== []) {
           if (initData.coinGeckoData.usd !== undefined) {
-            console.log(initData);
             let current_price_cg = initData.coinGeckoData.usd;
             let formatted_current_price = current_price_cg.toFixed(5);
             setCurrentPrice(formatted_current_price);

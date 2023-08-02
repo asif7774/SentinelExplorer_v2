@@ -3,15 +3,15 @@ import DetailsBox from '../common/DetailsBox/DetailsBox';
 import ListView from '../common/ListView/ListView';
 import {useSelector, useDispatch} from 'react-redux';
 import {setActiveNode} from '../../store/actions/mapActions';
-import {useParams} from 'react-router';
+import { useParams } from 'react-router';
 
 const AllNodes = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-  // const [dataFilterBY, setDataFilterBY] = useState('');
   const dispatch = useDispatch();
   const storeState = useSelector((state) => state);
-  const {city} = useParams();
+  const { city } = useParams();
+
   useEffect(() => {
     const initFn = () => {
       let mainData;
@@ -35,30 +35,15 @@ const AllNodes = () => {
             return 0;
           })
         );
-        // setDataFilterBY('country');
         setLoading(false);
       }
     };
     initFn();
-  }, [storeState]);
+  }, [storeState, city]);
   const clickHandler = (node) => {
     dispatch(setActiveNode(node));
   };
 
-  // const handleFilterChange = (e) => {
-  //   setData((data) =>
-  //     data.sort((a, b) => {
-  //       if (a.location[e.target.value] < b.location[e.target.value]) {
-  //         return -1;
-  //       }
-  //       if (a.location[e.target.value] > b.location[e.target.value]) {
-  //         return 1;
-  //       }
-  //       return 0;
-  //     })
-  //   );
-  //   setDataFilterBY(e.target.value);
-  // };
 
   return (
     <DetailsBox subtitle="All Nodes" subtitleClick={true}>

@@ -45,6 +45,7 @@ function rootReducer(state = defaultState, action) {
             location: {...el.location, continent},
           };
         }
+        return null
       });
       const filterData = modifiedData.filter((el) => {
         return el;
@@ -168,7 +169,6 @@ function rootReducer(state = defaultState, action) {
         reload: false,
       };
     case 'SET_RELOAD':
-      console.log('SET_RELOAD', action.payload);
       return {
         ...state,
         reload: action.payload,
